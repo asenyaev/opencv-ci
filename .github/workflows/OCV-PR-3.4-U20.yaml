@@ -2,17 +2,17 @@ name: PR:4.x U20
 
 on: workflow_call
 
-#env:
-#  EXTRA_CMAKE_OPTIONS: '-DBUILD_DOCS=ON -DPYTHON_DEFAULT_EXECUTABLE=/usr/bin/python3 -DOPENCV_DOWNLOAD_PATH=/home/ci/binaries_cache -DBUILD_EXAMPLES=ON -DOPENCV_ENABLE_NONFREE=ON'
-#  PR_AUTHOR: ${{ github.event.pull_request.user.login }}
-#  PR_AUTHOR_FORK: ${{ github.event.pull_request.head.repo.full_name }}
-#  SOURCE_BRANCH_NAME: ${{ github.head_ref }}
-#  TARGET_BRANCH_NAME: ${{ github.base_ref }}
-#  ANT_HOME: /usr/share/ant
-#  GIT_CACHE_DOCKER: /home/ci/git_cache
-#  PYTHONPATH: /opencv-build/python_loader:$PYTHONPATH
-#  OPENCV_TEST_DATA_PATH: /opencv_extra/testdata
-#  OPENCV_DOCKER_WORKDIR: /opencv
+env:
+  EXTRA_CMAKE_OPTIONS: '-DBUILD_DOCS=ON -DPYTHON_DEFAULT_EXECUTABLE=/usr/bin/python3 -DOPENCV_DOWNLOAD_PATH=/home/ci/binaries_cache -DBUILD_EXAMPLES=ON -DOPENCV_ENABLE_NONFREE=ON'
+  PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+  PR_AUTHOR_FORK: ${{ github.event.pull_request.head.repo.full_name }}
+  SOURCE_BRANCH_NAME: ${{ github.head_ref }}
+  TARGET_BRANCH_NAME: ${{ github.base_ref }}
+  ANT_HOME: /usr/share/ant
+  GIT_CACHE_DOCKER: /home/ci/git_cache
+  PYTHONPATH: /opencv-build/python_loader:$PYTHONPATH
+  OPENCV_TEST_DATA_PATH: /opencv_extra/testdata
+  OPENCV_DOCKER_WORKDIR: /opencv
 
 jobs:
   BuildAndTest:
